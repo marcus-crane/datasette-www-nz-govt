@@ -1,7 +1,7 @@
 import os
 
 from bs4 import BeautifulSoup
-from seleniumrequests import Chrome, Remote
+from seleniumrequests import Chrome, Remote, webdriver
 from slugify import slugify
 from sqlite_utils import Database
 
@@ -47,7 +47,7 @@ db["people"].create({
 
 webdriver = None
 if os.environ.get("CI", False):
-    webdriver = Remote('http://selenium:4444/wd/hub')
+    webdriver = Remote('http://selenium:4444/wd/hub', options=webdriver.ChromeOptions())
 else:
     webdriver = Chrome()
 
