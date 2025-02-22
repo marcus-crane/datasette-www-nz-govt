@@ -46,13 +46,13 @@ db["people"].create({
     "is_minister": bool,
 }, pk="id", if_not_exists=True)
 
-webdriver = None
+driver = None
 if os.environ.get("CI", False):
-    webdriver = Remote('http://selenium:4444/wd/hub', options=webdriver.ChromeOptions())
+    driver = Remote('http://selenium:4444/wd/hub', options=webdriver.ChromeOptions())
 else:
-    webdriver = Chrome()
+    driver = Chrome()
 
-r = webdriver.request('GET', GOVT_ORG_DIRECTORY_URL)
+r = driver.request('GET', GOVT_ORG_DIRECTORY_URL)
 soup = BeautifulSoup(r.text, "html.parser")
 links = soup.find_all("a", class_="ga-track-org-filter-topic")
 unique_links = list(set([link.attrs['href'] for link in links]))
@@ -95,7 +95,7 @@ def parse_address(soup, header):
 for link in unique_links:
     print(f"-- {link}")
     url = f"https://www.govt.nz/{link}"
-    r = webdriver.request('GET', url)
+    r = driver.request('GET', url)
     soup = BeautifulSoup(r.text, 'html.parser')
 
     _id = link.replace("organisations/", "").replace("/", "")
