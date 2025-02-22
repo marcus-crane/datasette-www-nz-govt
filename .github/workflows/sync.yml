@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: "0 18 * * *" # 5pm UTC = 6am NZT
   workflow_dispatch:
+env:
+  PYTHONUNBUFFERED: 1 # ensure that python scripts live output instead of buffering
 jobs:
   sync:
     name: Sync
