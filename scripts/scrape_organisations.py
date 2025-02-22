@@ -1,5 +1,7 @@
+import os
+
 from bs4 import BeautifulSoup
-from seleniumrequests import Chrome
+from seleniumrequests import Chrome, Remote
 from slugify import slugify
 from sqlite_utils import Database
 
@@ -43,7 +45,11 @@ db["people"].create({
     "is_minister": bool,
 }, pk="id", if_not_exists=True)
 
-webdriver = Chrome()
+webdriver = None
+if os.environ.get("CI", False):
+    webdriver = Remote('http://selenium:4444/wd/hub')
+else:
+    webdriver = Chrome()
 
 r = webdriver.request('GET', GOVT_ORG_DIRECTORY_URL)
 soup = BeautifulSoup(r.text, "html.parser")

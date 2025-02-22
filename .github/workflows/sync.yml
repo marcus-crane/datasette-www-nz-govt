@@ -7,6 +7,10 @@ jobs:
   sync:
     name: Sync
     runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: --shm-size=2gb
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,14 +18,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Setup Chrome Headless
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: 120
-          install-chromedriver: true
-      - name: Symlink Chrome Headless
-        run: |
-          sudo ln -sf /opt/hostedtoolcache/setup-chrome/chromium/stable/x64/chrome /usr/bin/google-chrome
       - name: Install Python dependencies
         run: pip install -r scripts/requirements.txt
       - name: Rebuild sqlite DB from govt.nz list
