@@ -1,0 +1,35 @@
+name: "Refresh database"
+on:
+  schedule:
+    - cron: "0 18 * * *" # 5pm UTC = 6am NZT
+  workflow_dispatch:
+jobs:
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: latest
+          install-chromedriver: true
+      - run: pip install -r requirements.txt
+      - run: python run scrape_organisations.py
+      - name: Commit database changes
+        run: |
+          set -eux
+
+          git config --local user.email "helper@utf9k.net"
+          git config --local user.name "Helper Bot"
+
+          if [[ $(git diff --numstat --minimal | grep index.json | awk '{ print $1 }') == '1' ]]; then
+            # Only one line difference (the index version incrementing) so bailing out since no changes
+            exit 0
+          fi
+          
+          git add .
+          git commit -a -m "Database has been updated" || exit 0
