@@ -19,6 +19,7 @@ jobs:
           install-chromedriver: true
       - run: pip install -r requirements.txt
       - run: python run scrape_organisations.py
+      - run: convert_sqlite_to_csv.sh
       - name: Commit database changes
         run: |
           set -eux
@@ -26,10 +27,10 @@ jobs:
           git config --local user.email "helper@utf9k.net"
           git config --local user.name "Helper Bot"
 
-          if [[ $(git diff --numstat --minimal | grep index.json | awk '{ print $1 }') == '1' ]]; then
-            # Only one line difference (the index version incrementing) so bailing out since no changes
-            exit 0
+          if [ $(git diff --numstat --exit-code) -eq 0 ];
+            # No changes have occurred so there's no point generating a commit"
+            exit $exit_status
           fi
           
           git add .
-          git commit -a -m "Database has been updated" || exit 0
+          git commit -a -m "Dataset has been updated" || exit 0
