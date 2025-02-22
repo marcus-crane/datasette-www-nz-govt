@@ -1,7 +1,8 @@
 import os
 
 from bs4 import BeautifulSoup
-from seleniumrequests import Chrome, Remote, webdriver
+from selenium import webdriver
+from seleniumrequests import Chrome, Remote
 from slugify import slugify
 from sqlite_utils import Database
 
