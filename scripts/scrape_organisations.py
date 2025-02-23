@@ -7,7 +7,7 @@ from sqlite_utils import Database
 
 GOVT_ORG_DIRECTORY_URL = "https://www.govt.nz/organisations/"
 
-db = Database("nz_government.db", recreate=True)
+db = Database("nz_government_v2.db", recreate=True)
 
 db["organisations"].create({
     "id": str,
