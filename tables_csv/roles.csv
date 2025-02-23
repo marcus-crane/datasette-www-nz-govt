@@ -39,7 +39,7 @@ ceo,CEO
 attorney-general,Attorney-General
 solicitor-general,Solicitor-General
 associate-minister-of-defence,Associate Minister of Defence
-minister-of-defence,Minister of Defence 
+minister-of-defence,Minister of Defence
 director-general,Director-General
 minister-of-corrections,Minister of Corrections
 minister-of-local-government,Minister of Local Government
@@ -127,8 +127,7 @@ minister-for-trade-and-investment,Minister for Trade and Investment
 associate-minister-of-foreign-affairs,Associate Minister of Foreign Affairs
 minister-of-state-for-trade,Minister of State for Trade
 chief-executive-and-secretary-of-foreign-affairs-and-trade,Chief Executive and Secretary of Foreign Affairs and Trade
-director-general-of-health-and-chief-executive,"Director-General of Health and Chief Executive
-"
+director-general-of-health-and-chief-executive,Director-General of Health and Chief Executive
 associate-minister-of-housing-social-housing,Associate Minister of Housing (Social Housing)
 minister-for-courts,Minister for Courts
 associate-minister-of-justice-firearms,Associate Minister of Justice (Firearms)
@@ -161,7 +160,7 @@ clerk-of-the-house,Clerk of the House
 chief-ombudsman,Chief Ombudsman
 chief-parliamentary-counsel,Chief Parliamentary Counsel
 associate-minister-of-health-pharmac,Associate Minister of Health (Pharmac)
-privacy-commissioner,Privacy Commissioner 
+privacy-commissioner,Privacy Commissioner
 deputy-privacy-commissioner,Deputy Privacy Commissioner
 minister-for-the-public-service,Minister for the Public Service
 acting-public-service-commissioner,Acting Public Service Commissioner
