@@ -7,7 +7,7 @@ from sqlite_utils import Database
 
 GOVT_ORG_DIRECTORY_URL = "https://www.govt.nz/organisations/"
 
-db = Database("nz_government.db", recreate=True)
+db = Database("nz_government_v1.db", recreate=True)
 
 db["organisations"].create({
     "id": str,
@@ -102,7 +102,7 @@ def parse_address(soup, header):
         'country': address_country
     }
 
-for link in unique_links:
+for link in unique_links[0:5]:
     print(f"-- {link}")
     url = f"https://www.govt.nz/{link}"
     r = requests.post(scrape_url, params=scrape_params, json={"url": url})

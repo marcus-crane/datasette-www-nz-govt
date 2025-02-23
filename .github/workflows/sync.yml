@@ -8,6 +8,7 @@ env:
 jobs:
   sync:
     name: Sync
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,10 +33,11 @@ jobs:
           git config --local user.email "helper@utf9k.net"
           git config --local user.name "Helper Bot"
 
-          if [ $(git diff --numstat --exit-code) -eq 0 ] then;
+          if git diff --quiet; then
             # No changes have occurred so there's no point generating a commit"
-            exit $exit_status
+            exit 0
           fi
           
           git add .
-          git commit -a -m "Dataset has been updated" || exit 0
+          git commit -m "Dataset has been updated"
+          git push
