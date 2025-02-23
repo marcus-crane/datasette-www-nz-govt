@@ -33,7 +33,7 @@ jobs:
           git config --local user.email "helper@utf9k.net"
           git config --local user.name "Helper Bot"
 
-          if git diff --quiet; then
+          if [ -z "$(git status --porcelain)" ]; then
             # No changes have occurred so there's no point generating a commit"
             exit 0
           fi
