@@ -32,7 +32,7 @@ jobs:
           git config --local user.email "helper@utf9k.net"
           git config --local user.name "Helper Bot"
 
-          if [ $(git diff --numstat --exit-code) -eq 0 ];
+          if [ $(git diff --numstat --exit-code) -eq 0 ] then;
             # No changes have occurred so there's no point generating a commit"
             exit $exit_status
           fi
