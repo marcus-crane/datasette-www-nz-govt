@@ -1,0 +1,89 @@
+title: New Zealand metadata
+license: ODbL
+license_url: https://opendatacommons.org/licenses/odbl/
+databases:
+  nz_government:
+    source: www.govt.nz
+    source_url: https://www.govt.nz/organisations/
+    tables:
+      organisations:
+        source: www.govt.nz
+        source_url: https://www.govt.nz/organisations/
+      organisations_people:
+        source: www.govt.nz
+        source_url: https://www.govt.nz/organisations/
+      organisations_roles:
+        source: www.govt.nz
+        source_url: https://www.govt.nz/organisations/
+      people:
+        source: www.govt.nz
+        source_url: https://www.govt.nz/organisations/
+      people_roles:
+        source: www.govt.nz
+        source_url: https://www.govt.nz/organisations/
+      roles:
+        source: www.govt.nz
+        source_url: https://www.govt.nz/organisations/
+    queries:
+      all_minister_roles:
+        sql: |-
+          SELECT
+              p.honorific as honorific,
+              p.name as minister_name,
+              group_concat(r.name, ' | ') as roles
+          FROM people p
+          JOIN people_roles pr ON p.id = pr.people_id
+          JOIN (
+              SELECT id, name 
+              FROM roles 
+              ORDER BY name
+          ) r ON pr.roles_id = r.id
+          WHERE p.is_minister = 1
+          GROUP BY p.id, p.honorific, p.name
+          ORDER BY p.name;
+        title: All roles held by each minister
+
+      all_non-minister_roles:
+        sql: |-
+          SELECT
+              p.honorific as honorific,
+              p.name as person_name,
+              group_concat(r.name, ' | ') as roles
+          FROM people p
+          JOIN people_roles pr ON p.id = pr.people_id
+          JOIN (
+              SELECT id, name 
+              FROM roles 
+              ORDER BY name
+          ) r ON pr.roles_id = r.id
+          WHERE p.is_minister = 0
+          GROUP BY p.id, p.honorific, p.name
+          ORDER BY p.name;
+        title: All roles held by each non-ministerial person
+
+      current_ministers:
+        sql: |-
+          SELECT 
+            p.honorific as honorific,
+            p.name as minister_name
+          FROM people p
+          WHERE p.is_minister = 1
+          ORDER BY p.name;
+        title: Current ministers
+
+      minister_organsation_relationships:
+        sql: |-
+          SELECT 
+            o.name as organisation_name,
+            p.name as minister_name,
+            r.name as role_name
+          FROM organisations o
+          JOIN organisations_roles or_roles ON o.id = or_roles.organisations_id
+          JOIN roles r ON or_roles.roles_id = r.id
+          JOIN organisations_people op ON o.id = op.organisations_id
+          JOIN people p ON op.people_id = p.id
+          JOIN people_roles pr ON p.id = pr.people_id AND r.id = pr.roles_id
+          WHERE p.is_minister = 1
+          ORDER BY o.name, p.name, r.name;
+        title: Ministerial relationships to organisations
+            
