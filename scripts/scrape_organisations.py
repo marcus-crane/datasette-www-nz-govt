@@ -1,8 +1,7 @@
 import os
 
 from bs4 import BeautifulSoup
-from selenium import webdriver
-from seleniumrequests import Chrome, Remote
+import requests
 from slugify import slugify
 from sqlite_utils import Database
 
@@ -46,13 +45,21 @@ db["people"].create({
     "is_minister": bool,
 }, pk="id", if_not_exists=True)
 
-driver = None
-if os.environ.get("CI", False):
-    driver = Remote('http://localhost:4444/wd/hub', options=webdriver.ChromeOptions())
-else:
-    driver = Chrome()
+# Could be migrated to a container in the pipeline but I had trouble getting this to work so for now,
+# I'll just be hosting some infrastructure in the background to use instead
+browserless_api_token = os.environ.get("BROWSERLESS_API_TOKEN", False)
+if not browserless_api_token:
+    print("Please set BROWSERLESS_API_TOKEN env var")
+    os.exit(1)
 
-r = driver.request('GET', GOVT_ORG_DIRECTORY_URL)
+scrape_url = os.environ.get("BROWSERLESS_URL", False)
+if not scrape_url:
+    print("Please set BROWSERLESS_URL env var")
+    os.exit(1)
+
+scrape_params = {"token": browserless_api_token, "stealth": True}
+
+r = requests.post(scrape_url, params=scrape_params, json={"url": GOVT_ORG_DIRECTORY_URL})
 soup = BeautifulSoup(r.text, "html.parser")
 links = soup.find_all("a", class_="ga-track-org-filter-topic")
 unique_links = list(set([link.attrs['href'] for link in links]))
@@ -74,15 +81,18 @@ def parse_address(soup, header):
             # Some organisations have more than one extended address so we just collapse them down.
             # They aren't currently used for anything programmatic (ie; geocoding)
             address_extended = ' '.join([x.get_text(strip=True) for x in address_extended_bits])
-        if address_el.find("span", class_="street-address") is not None:
-            address_street = address_el.find("span", class_="street-address").get_text(strip=True).replace("\r\n", " ")
-        if address_el.find("span", class_="locality") is not None:
-            address_locality = address_el.find("span", class_="locality").get_text(strip=True)
-        if address_el.find("span", class_="postal-code") is not None:
-            address_postcode = address_el.find("span", class_="postal-code").get_text(strip=True)
-        if address_el.find("span", class_="country-name") is not None:
-            # NOTE: At least one organisation has a "country" of "(main office)"
-            address_country = address_el.find("span", class_="country-name").get_text(strip=True)
+        address_street_bits = address_el.find("span", class_="street-address")
+        if address_street_bits is not None:
+            address_street = ' '.join([x.get_text(strip=True) for x in address_street_bits])
+        address_locality_bits = address_el.find("span", class_="locality")
+        if address_locality_bits is not None:
+            address_locality = ' '.join([x.get_text(strip=True) for x in address_locality_bits])
+        address_postcode_bits = address_el.find("span", class_="postal-code")
+        if address_postcode_bits is not None:
+            address_postcode = ' '.join([x.get_text(strip=True) for x in address_postcode_bits])
+        address_country_bits = address_el.find("span", class_="country-name")
+        if address_country_bits is not None:
+            address_country = ' '.join([x.get_text(strip=True) for x in address_country_bits])
 
     return {
         'extended': address_extended,
@@ -92,10 +102,10 @@ def parse_address(soup, header):
         'country': address_country
     }
 
-for link in unique_links:
+for link in unique_links[0:5]:
     print(f"-- {link}")
     url = f"https://www.govt.nz/{link}"
-    r = driver.request('GET', url)
+    r = requests.post(scrape_url, params=scrape_params, json={"url": url})
     soup = BeautifulSoup(r.text, 'html.parser')
 
     _id = link.replace("organisations/", "").replace("/", "")

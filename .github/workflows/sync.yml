@@ -26,6 +26,9 @@ jobs:
         run: pip install -r scripts/requirements.txt
       - name: Rebuild sqlite DB from govt.nz list
         run: python scripts/scrape_organisations.py
+        env:
+          BROWSERLESS_API_TOKEN: ${{ secrets.BROWSERLESS_API_TOKEN }}
+          BROWSERLESS_URL: ${{ secrets.BROWSERLESS_URL }}
       - name: Generate CSV files from sqlite database
         run: ./scripts/convert_sqlite_to_csv.sh
       - name: Commit database changes
