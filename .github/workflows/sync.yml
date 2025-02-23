@@ -9,12 +9,6 @@ jobs:
   sync:
     name: Sync
     runs-on: ubuntu-latest
-    services:
-      selenium:
-        image: selenium/standalone-chrome
-        options: --shm-size=2gb
-        ports:
-          - 4444:4444
     steps:
       - name: Checkout
         uses: actions/checkout@v4
