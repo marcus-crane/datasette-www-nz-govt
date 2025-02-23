@@ -46,3 +46,7 @@ jobs:
           git add .
           git commit -m "Dataset has been updated"
           git push
+      - name: Push changes to fly.io
+        run: datasette publish fly nz_government.db --metadata metadata.yml --app="nzgovtdatasette"
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
