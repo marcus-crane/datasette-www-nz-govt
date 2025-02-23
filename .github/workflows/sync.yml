@@ -9,7 +9,7 @@ env:
 jobs:
   sync:
     name: Sync
-    timeout-minutes: 30
+    timeout-minutes: 60
     runs-on: ubuntu-latest
 
     permissions:
