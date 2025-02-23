@@ -102,7 +102,7 @@ def parse_address(soup, header):
         'country': address_country
     }
 
-for link in unique_links:
+for link in unique_links[0:5]:
     print(f"-- {link}")
     url = f"https://www.govt.nz/{link}"
     r = requests.post(scrape_url, params=scrape_params, json={"url": url})
