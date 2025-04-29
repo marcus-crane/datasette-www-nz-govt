@@ -432,7 +432,7 @@ new-plymouth-district-council,neil-holdom
 new-zealand-antarctic-institute,rt-honwinston-peters
 new-zealand-antarctic-institute,sarah-williamson
 new-zealand-antarctic-institute,sirbrian-roche
-new-zealand-army,peter-kelly
+new-zealand-army,major-generalrose-king
 new-zealand-blood-service,honsimeon-brown
 new-zealand-blood-service,honcasey-costello
 new-zealand-blood-service,honmatt-doocey
@@ -443,11 +443,10 @@ new-zealand-customs-service,honcasey-costello
 new-zealand-customs-service,christine-stevenson
 new-zealand-defence-force,honchris-penk
 new-zealand-defence-force,honjudith-collins
-new-zealand-defence-force,air-marshalkevin-short
-new-zealand-defence-force,peter-kelly
-new-zealand-defence-force,rear-admiraldavid-proctor
-new-zealand-defence-force,major-generaljohn-boswell-dsd
-new-zealand-defence-force,air-vice-marshalandrew-clark
+new-zealand-defence-force,air-marshaltony-davies-mnzm
+new-zealand-defence-force,rear-admiralgarin-golding
+new-zealand-defence-force,major-generalrose-king
+new-zealand-defence-force,air-vice-marshaldarryn-webb
 new-zealand-film-commission,honpaul-goldsmith
 new-zealand-film-commission,kerry-prendergast
 new-zealand-film-commission,annabelle-sheehan
@@ -608,6 +607,8 @@ reserve-bank-of-new-zealand,christian-hawkesby
 reserve-bank-of-new-zealand,professorneil-quigley
 rotorua-lakes-council,geoff-williams
 rotorua-lakes-council,tania-tapsell
+royal-new-zealand-airforce,air-vice-marshaldarryn-webb
+royal-new-zealand-navy,rear-admiralgarin-golding
 ruapehu-district-council,weston-kirton
 ruapehu-district-council,clive-manley
 scion,julian-elder
@@ -687,6 +688,9 @@ te-pukenga,stephen-town
 te-pukenga,murray-strong
 te-puni-kokiri,hontama-potaka
 te-puni-kokiri,dave-samuels
+te-tari-whakatau,honpaul-goldsmith
+te-tari-whakatau,hontama-potaka
+te-tari-whakatau,lil-anderson
 te-taura-whiri-i-te-reo-maori-maori-language-comm,hontama-potaka
 te-taura-whiri-i-te-reo-maori-maori-language-comm,ngahiwi-apanui
 te-taura-whiri-i-te-reo-maori-maori-language-comm,professorrawinia-higgins
@@ -714,9 +718,6 @@ tertiary-education-commission,tim-fowler
 tertiary-education-commission,jenn-bestwick
 thames-coromandel-district-council,aileen-lawrie
 thames-coromandel-district-council,len-salt
-the-office-for-maori-crown-relations-te-arawhiti,honpaul-goldsmith
-the-office-for-maori-crown-relations-te-arawhiti,hontama-potaka
-the-office-for-maori-crown-relations-te-arawhiti,lil-anderson
 the-treasury,honnicola-willis
 the-treasury,honchris-bishop
 the-treasury,honsimon-watts
@@ -755,7 +756,6 @@ university-of-otago,stephen-higgs
 university-of-waikato,rt-hon-siranand-satyanand
 university-of-waikato,professorneil-quigley
 upper-hutt-city-council,wayne-guppy
-upper-hutt-city-council,peter-kelly
 valuers-registration-board,neill-sullivan
 veterans-affairs-new-zealand,honchris-penk
 victoria-university-of-wellington,profgrant-guilford
