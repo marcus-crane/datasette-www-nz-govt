@@ -7,8 +7,6 @@ accreditation-council,chief-executive
 accreditation-council,chair
 advertising-standards-authority,chief-executive
 advertising-standards-authority,chair
-agresearch-limited,chief-executive
-agresearch-limited,chair
 agricultural-and-marketing-research-and-development-trust,minister-of-agriculture
 agricultural-and-marketing-research-and-development-trust,associate-minister-of-agriculture
 agricultural-and-marketing-research-and-development-trust,associate-minister-of-agriculture-horticulture
@@ -50,6 +48,8 @@ banking-ombudsman-scheme,banking-ombudsman
 banking-ombudsman-scheme,independent-chair
 bay-of-plenty-regional-council,chief-executive
 bay-of-plenty-regional-council,chairman
+bioeconomy-science-institute,chair
+bioeconomy-science-institute,transition-chief-executive
 broadcasting-standards-authority,minister-for-media-and-communications
 broadcasting-standards-authority,parliamentary-under-secretary-to-the-minister-for-media-and-communications
 broadcasting-standards-authority,chief-executive
@@ -132,6 +132,8 @@ drug-free-sport-new-zealand,chair
 drug-free-sport-new-zealand,chief-executive
 dunedin-city-council,chief-executive-officer
 dunedin-city-council,mayor
+earth-sciences-nz,chair
+earth-sciences-nz,transition-chief-executive
 eastern-fish-and-game-council,minister-of-conservation
 eastern-fish-and-game-council,manager
 eastern-fish-and-game-council,chairperson
@@ -166,8 +168,6 @@ environmental-protection-authority,minister-for-the-environment
 environmental-protection-authority,associate-minister-for-the-environment
 environmental-protection-authority,acting-chair
 environmental-protection-authority,chief-executive
-esr,chief-executive
-esr,chair
 external-reporting-board,chair-person
 external-reporting-board,chief-executive
 fairway-resolution,chief-executive
@@ -184,8 +184,6 @@ genesis-energy-limited,chief-executive
 genesis-energy-limited,chairperson
 gisborne-district-council,mayor
 gisborne-district-council,chief-executive
-gns-science,chief-executive
-gns-science,chair
 gore-district-council,mayor
 gore-district-council,chief-executive
 government-communications-security-bureau,minister-responsible-for-the-gcsb
@@ -285,8 +283,6 @@ kordia-group-limited,chief-executive
 kordia-group-limited,chairman
 land-information-new-zealand,minister-for-land-information
 land-information-new-zealand,chief-executive
-landcare-research-new-zealand-limited,ceo
-landcare-research-new-zealand-limited,chair
 landcorp,minister-for-state-owned-enterprises
 landcorp,chair
 landcorp,chief-executive-officer
@@ -503,8 +499,6 @@ new-zealand-transport-agency,chair
 ngai-tahu-ancillary-claims-trust,minister-for-treaty-of-waitangi-negotiations
 ngai-tahu-ancillary-claims-trust,chairperson
 ngai-tahu-ancillary-claims-trust,chief-executive
-niwa,chief-executive
-niwa,chair
 north-canterbury-fish-and-game-council,minister-of-conservation
 north-canterbury-fish-and-game-council,chief-executive
 north-canterbury-fish-and-game-council,chair
@@ -563,8 +557,6 @@ pharmaceutical-management-agency,associate-minister-of-health
 pharmaceutical-management-agency,associate-minister-of-health-pharmac
 pharmaceutical-management-agency,chair
 pharmaceutical-management-agency,chief-executive
-plant-and-food-research,acting-chair
-plant-and-food-research,chief-executive-officer
 porirua-city-council,mayor
 porirua-city-council,chief-executive
 predator-free-2050,chief-executive-officer
@@ -573,6 +565,8 @@ privacy-commissioner,minister-of-justice
 privacy-commissioner,privacy-commissioner
 privacy-commissioner,general-manager
 privacy-commissioner,deputy-privacy-commissioner
+public-health-and-forensic-science,chair
+public-health-and-forensic-science,chief-executive
 public-service-commission,minister-for-the-public-service
 public-service-commission,public-service-commissioner
 public-trust,minister-of-justice
@@ -607,8 +601,6 @@ royal-new-zealand-airforce,chief-of-air-force
 royal-new-zealand-navy,chief-of-navy
 ruapehu-district-council,mayor
 ruapehu-district-council,chief-executive
-scion,chief-executive-officer
-scion,board-chair
 selwyn-district-council,chief-executive
 selwyn-district-council,mayor
 serious-fraud-office,associate-minister-of-police

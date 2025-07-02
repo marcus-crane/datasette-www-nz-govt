@@ -7,8 +7,6 @@ accreditation-council,brian-young
 accreditation-council,paul-connell
 advertising-standards-authority,hilary-souter
 advertising-standards-authority,honheather-roy
-agresearch-limited,sue-bidrose
-agresearch-limited,drpaul-reynolds-qso
 agricultural-and-marketing-research-and-development-trust,hontodd-mcclay
 agricultural-and-marketing-research-and-development-trust,honmark-patterson
 agricultural-and-marketing-research-and-development-trust,honnicola-grigg
@@ -50,6 +48,8 @@ banking-ombudsman-scheme,nicola-sladden
 banking-ombudsman-scheme,miriam-dean-cnzm-qc
 bay-of-plenty-regional-council,fiona-mctavish
 bay-of-plenty-regional-council,doug-leeder
+bioeconomy-science-institute,barry-harris
+bioeconomy-science-institute,mark-piper
 broadcasting-standards-authority,honpaul-goldsmith
 broadcasting-standards-authority,honjenny-marcroft
 broadcasting-standards-authority,glen-scanlon
@@ -129,6 +129,8 @@ drug-free-sport-new-zealand,tim-castle
 drug-free-sport-new-zealand,nick-paterson
 dunedin-city-council,sandy-graham
 dunedin-city-council,jules-radich
+earth-sciences-nz,david-smol
+earth-sciences-nz,john-morgan
 eastern-fish-and-game-council,hontama-potaka
 eastern-fish-and-game-council,arash-alaeinia
 eastern-fish-and-game-council,ngahi-bidois
@@ -163,8 +165,6 @@ environmental-protection-authority,honpenny-simmonds
 environmental-protection-authority,honandrew-hoggard
 environmental-protection-authority,steven-tipene-wilson
 environmental-protection-authority,drallan-freeth
-esr,peter-lennox
-esr,denise-church-qso-cfinstd
 external-reporting-board,michele-embling
 external-reporting-board,wendy-venter
 fairway-resolution,rhys-west
@@ -181,8 +181,6 @@ genesis-energy-limited,marc-england
 genesis-energy-limited,barbara-chapman
 gisborne-district-council,rehette-stoltz
 gisborne-district-council,nedine-thatcher-swann
-gns-science,chelydra-percy
-gns-science,david-smol
 gore-district-council,ben-bell
 gore-district-council,stephen-parry
 government-communications-security-bureau,honjudith-collins
@@ -291,8 +289,6 @@ kordia-group-limited,shaun-rendell
 kordia-group-limited,john-quirk
 land-information-new-zealand,honchris-penk
 land-information-new-zealand,drrichard-hawke
-landcare-research-new-zealand-limited,richard-gordon
-landcare-research-new-zealand-limited,jane-taylor
 landcorp,honsimeon-brown
 landcorp,john-rae
 landcorp,mark-leslie
@@ -505,8 +501,6 @@ new-zealand-transport-agency,honsimon-bridges
 ngai-tahu-ancillary-claims-trust,honpaul-goldsmith
 ngai-tahu-ancillary-claims-trust,sirmark-solomon-knzm
 ngai-tahu-ancillary-claims-trust,arihia-bennett
-niwa,john-morgan
-niwa,barry-harris
 north-canterbury-fish-and-game-council,hontama-potaka
 north-canterbury-fish-and-game-council,rasmus-gabrielsson
 north-canterbury-fish-and-game-council,alan-strong
@@ -565,8 +559,6 @@ pharmaceutical-management-agency,honmatt-doocey
 pharmaceutical-management-agency,hondavid-seymour
 pharmaceutical-management-agency,drpeter-bramley
 pharmaceutical-management-agency,sarah-fitt
-plant-and-food-research,greg-gent
-plant-and-food-research,david-hughes
 porirua-city-council,anita-baker
 porirua-city-council,wendy-walker
 predator-free-2050,rob-forlong
@@ -575,6 +567,8 @@ privacy-commissioner,honpaul-goldsmith
 privacy-commissioner,michael-webster
 privacy-commissioner,emma-boddy
 privacy-commissioner,liz-macpherson
+public-health-and-forensic-science,sarah-young
+public-health-and-forensic-science,sirashley-bloomfield
 public-service-commission,honjudith-collins
 public-service-commission,sirbrian-roche
 public-trust,honpaul-goldsmith
@@ -611,8 +605,6 @@ royal-new-zealand-airforce,air-vice-marshaldarryn-webb
 royal-new-zealand-navy,rear-admiralgarin-golding
 ruapehu-district-council,weston-kirton
 ruapehu-district-council,clive-manley
-scion,julian-elder
-scion,helen-anderson
 selwyn-district-council,david-ward
 selwyn-district-council,sam-broughton
 serious-fraud-office,honcasey-costello
